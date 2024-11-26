@@ -1,0 +1,8 @@
+<label for="password">Ingrese su contraseña: </label>
+<input type="password" [(ngModel)]="password" (input)="onPasswordChange()" />
+
+<div *ngIf="passwordErrors.length > 0" class="error-messages">
+  <ul>
+    <li *ngFor="let error of passwordErrors">{{ error }}</li>
+  </ul>
+</div>

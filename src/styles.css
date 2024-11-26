@@ -1,0 +1,38 @@
+/* Variables globales para ambos modos */
+:root {
+  --background-light: #f4f4f9;
+  --container-light: #ffffff;
+  --button-light: #007bff;
+  --text-light: #333;
+  --border-light: #ddd;
+
+  --background-dark: #1e1e2f;
+  --container-dark: #2b2b40;
+  --button-dark: #5865f2;
+  --text-dark: #f0f0f0;
+  --border-dark: #444;
+}
+
+/* Modo claro */
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo oscuro */
+.dark-mode {
+  --background-color: var(--background-dark);
+  --container-color: var(--container-dark);
+  --button-color: var(--button-dark);
+  --text-color: var(--text-dark);
+  --border-color: var(--border-dark);
+}
+
+body.dark-mode {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

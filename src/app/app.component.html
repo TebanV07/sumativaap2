@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="button-container">
+    <app-aceptar (accept)="onAccept()"></app-aceptar>
+    <app-cancelar (cancel)="onCancel()"></app-cancelar>
+    <app-clicks (countClick)="onCountClick()"></app-clicks>
+    <app-deshabilitar (disableClickButton)="onDisableClickButton()"></app-deshabilitar>
+    <app-oscuro (toggleDarkMode)="onToggleDarkMode()"></app-oscuro>
+  </div>
+
+  <div class="content">
+    <div class="inputs-container">
+      <app-mail (emailChange)="onEmailChange($event)"></app-mail>
+      <div class="messages">
+        <div *ngIf="emailValid" class="email-valid">{{ emailValid }}</div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      </div>
+      <app-contra (passwordChange)="onPasswordChange($event)"></app-contra>
+      <app-texto (textChange)="onTextChange($event)"></app-texto>   
+    </div>
+    <app-visualisador
+      [email]="email"
+      [password]="password"
+      [text]="text"
+      [clickCount]="clickCount"
+      [isClickButtonDisabled]="isClickButtonDisabled">
+    </app-visualisador>
+  </div>
+</div>
